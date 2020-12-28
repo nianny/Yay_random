@@ -60,6 +60,18 @@ while not found:
         if (lives<=0):
             print("Awwww. All your lives were lost. Please play again later")
             break
+        if (lives == 6):
+            clue = random.randint(0, word_length-1)
+            clue_word = word[clue];
+            for i in range(word_length):
+                if word[i] == clue_word:
+                    alpha[i] = True
+        if (lives == 3):
+            clue = random.randint(0, word_length-1)
+            clue_word = word[clue];
+            for i in range(word_length):
+                if word[i] == clue_word:
+                    alpha[i] = True
         print("This letter is unfortunately not in the word. Please try again.")
         continue
     
