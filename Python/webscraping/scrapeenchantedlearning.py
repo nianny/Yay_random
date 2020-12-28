@@ -15,16 +15,11 @@ Hallo people, this is my first time trying out making a hangman game.
 The first time you play might take up to a few minutes to load as it
 will have to download all the words down from the interet.
 
-I havent figured out how to make the save as txt part, so you have
-to bear with the 10 minutes wait per round in the meantime
+Because this is the first time you are playing this game, or you have
+changed your directory, you wil have to wait for 10 minutes while the 
+game sets itself up. I apologise for the wait.
 
-Currently, it outputs a random word with a random topic (after you
-wait for probably 10 minutes. 
-
-
-Any errors please raise an issue on github!!!
-
-
+Good luck with the game later.
 
 """
 print(message)

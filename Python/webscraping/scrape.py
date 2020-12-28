@@ -3,7 +3,7 @@ from urllib.request import urlopen
 import re
 import random
 import os.path
-def scrap ():
+def scrape ():
     url = "https://www.enchantedlearning.com/wordlist/"
     page = urlopen(url)
     html = page.read().decode("utf-8")
@@ -11,26 +11,16 @@ def scrap ():
 
 
     message = """
-    Hallo people, this is my first time trying out making a hangman game.
-    The first time you play might take up to a few minutes to load as it
-    will have to download all the words down from the interet.
+Because this is currently your first time playing this game,
+or you have changed the directory of the files, you will have
+to wait for around 10 minutes while waiting for the words
+to be etracted. Please be patient.
 
-    I havent figured out how to make the save as txt part, so you have
-    to bear with the 10 minutes wait per round in the meantime
-
-    Currently, it outputs a random word with a random topic (after you
-    wait for probably 10 minutes. 
-
-
-    Any errors please raise an issue on github!!!
-
-
-
-    """
+"""
     print(message)
     print("Accessing main page")
 
-    links = [[]]
+    links = []
     for link in soup.find_all("a", target="_top"):
         if (str(link.get('href'))[:10]=="/wordlist/"):
             #print(link.get('href'))
@@ -40,9 +30,9 @@ def scrap ():
 
     print("Accessing various directories")
 
-    word = [[]]
-    for i in range(len(links)-1):
-        url2 = "http://www.enchantedlearning.com"+links[i+1][0]
+    word = []
+    for i in range(len(links)):
+        url2 = "http://www.enchantedlearning.com"+links[i][0]
 
         page2 = urlopen(url2)
         html2 = page2.read().decode("utf-8")
@@ -57,14 +47,20 @@ def scrap ():
 
 
 
-    out = random.randint(0,len(word))
-    inside = random.randint(0,len(word[out]))
+    # out = random.randint(0,len(word))
+    # inside = random.randint(0,len(word[out]))
 
-    with open ('words.txt', 'w') as t:
-        for ()
+    print("Saving data")
+    with open ('hallo.txt', 'w') as t:
+        for i in range (len(word)):
+            for p in range (len(word[i])):
+                t.write(str([links[i][1], word[i][p]]))
+                t.write('\n')
+    
+    print("Data saved")
 
-    print(f"The topic is about: {links[out][1]}")
-    print(f"Hmm. The word is: {word[out][inside]}")
+    # print(f"The topic is about: {links[out][1]}")
+    # print(f"Hmm. The word is: {word[out][inside]}")
 
 
 
