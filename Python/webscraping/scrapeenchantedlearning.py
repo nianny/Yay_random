@@ -9,6 +9,7 @@ page = urlopen(url)
 html = page.read().decode("utf-8")
 soup = BeautifulSoup(html, "html.parser")
 
+
 message = """
 Hallo people, this is my first time trying out making a hangman game.
 The first time you play might take up to a few minutes to load as it
@@ -29,7 +30,7 @@ Any errors please raise an issue on github!!!
 print(message)
 print("Accessing main page")
 
-links = [[]]
+links = []
 for link in soup.find_all("a", target="_top"):
     if (str(link.get('href'))[:10]=="/wordlist/"):
         #print(link.get('href'))
@@ -40,8 +41,8 @@ links = links[:-3]
 print("Accessing various directories")
 
 word = [[]]
-for i in range(len(links)-1):
-    url2 = "http://www.enchantedlearning.com"+links[i+1][0]
+for i in range(len(links)):
+    url2 = "http://www.enchantedlearning.com"+links[i][0]
 
     page2 = urlopen(url2)
     html2 = page2.read().decode("utf-8")
