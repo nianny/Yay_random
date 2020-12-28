@@ -3,6 +3,9 @@ from urllib.request import urlopen
 import re
 import random
 import os.path
+from pathlib import Path
+directory = Path(__file__).parent.absolute()
+
 def scrape ():
     url = "https://www.enchantedlearning.com/wordlist/"
     page = urlopen(url)
@@ -51,11 +54,13 @@ to be etracted. Please be patient.
     # inside = random.randint(0,len(word[out]))
 
     print("Saving data")
-    with open ('hallo.txt', 'w') as t:
+    with open (f'{directory}\words.txt', 'w') as t:
         for i in range (len(word)):
             for p in range (len(word[i])):
                 if ' ' not in word[i][o]:
-                    t.write(str([links[i][1], word[i][p]]))
+                    t.write(str(links[i][1]))
+                    t.write(',')
+                    t.write(str(word[i][p]))
                     t.write('\n')
     
     print("Data saved")

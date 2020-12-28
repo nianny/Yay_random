@@ -2,6 +2,9 @@ import re
 import random
 import os.path
 import scrape
+from pathlib import Path
+directory = Path(__file__).parent.absolute()
+
 
 message = """
 Hallo and welcome to the first game created ever by me.
@@ -14,10 +17,12 @@ code you downloaded are in. Thank you.
 
 """
 print(message)
-if not os.path.isfile('hallo.txt'):
+if not os.path.isfile(f'{directory}\words.txt'):
     scrape.scrape()
 words = []
-with open ('hallo.txt', 'r') as t:
+with open (f'{directory}\words.txt', 'r') as t:
+    string = t.readline()
+    words.append(string.split(','))
     words.append(list(t.readline()))
 
 found = False
