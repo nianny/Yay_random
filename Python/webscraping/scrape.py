@@ -54,8 +54,9 @@ to be etracted. Please be patient.
     with open ('hallo.txt', 'w') as t:
         for i in range (len(word)):
             for p in range (len(word[i])):
-                t.write(str([links[i][1], word[i][p]]))
-                t.write('\n')
+                if ' ' not in word[i][o]:
+                    t.write(str([links[i][1], word[i][p]]))
+                    t.write('\n')
     
     print("Data saved")
 
