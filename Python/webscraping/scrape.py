@@ -54,10 +54,10 @@ to be etracted. Please be patient.
     # inside = random.randint(0,len(word[out]))
 
     print("Saving data")
-    with open (f'{directory}\words.txt', 'w') as t:
+    with open (directory.joinpath("words.txt"), 'w') as t:
         for i in range (len(word)):
             for p in range (len(word[i])):
-                if ' ' not in word[i][o]:
+                if ' ' not in word[i][p]:
                     t.write(str(links[i][1]))
                     t.write(',')
                     t.write(str(word[i][p]))
