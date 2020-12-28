@@ -31,7 +31,17 @@ word_length = len(word)
 lives = 9
 # print(index)
 # print(words[index])
-print(f"Just as a clue, the topic of the word is: {topic}")
+agree = True
+while agree:
+    agr = input(f"The current topic is {topic}. If you wish to change, input 'c'. Else, input 'n': ")
+    if agr == 'c':
+        index = random.randint(0,len(words)-1)
+        topic = words[index][0]
+        word = words[index][1][:-1]
+        word_length = len(word)
+    elif agr == 'n':
+        agree = False
+        
 # print(word)
 # print(word_length)
 alpha = []
@@ -55,6 +65,7 @@ while not found:
     print(output)
     print(f"Your have {lives} lives left.")
     choice = str(input("Please type in a new character: "))
+    print("Now you know at least 1 letter. Keep trying")
     if choice not in word:
         lives -= 1
         if (lives<=0):
@@ -66,6 +77,7 @@ while not found:
             for i in range(word_length):
                 if word[i] == clue_word:
                     alpha[i] = True
+            
         if (lives == 3):
             clue = random.randint(0, word_length-1)
             clue_word = word[clue];
@@ -73,9 +85,11 @@ while not found:
                 if word[i] == clue_word:
                     alpha[i] = True
         print("This letter is unfortunately not in the word. Please try again.")
+        print('\n')
         continue
     
     print("Wow. This letter is indeed in the word. ")
+    print('\n')
     for i in range(word_length):
         if word[i] == choice:
             alpha[i] = True
