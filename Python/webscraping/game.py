@@ -26,6 +26,11 @@ topic = words[index][0]
 word = words[index][1]
 word_length = len(word)
 lives = 5
-while not found:
-    
-    choice = str(input("Please type in a new character: "))
+print(index)
+print(words[index])
+print(topic)
+print(word)
+print(word_length)
+# while not found:
+
+#     choice = str(input("Please type in a new character: "))
