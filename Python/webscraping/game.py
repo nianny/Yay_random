@@ -12,8 +12,31 @@ This is a hangman game created in the form of a webscrape!!!
 The words are derived from enchantedlearning.com/wordlist/ 
 and good luck for the game :)
 
+Please raise any possible issues on github
+Also, avoid moving the files game.py and scrape.py to seperate directories. Thank you!!!
+"""
+
+
 
 """
+How does this thing work???
+If you did not play this before/did not download the words together, it will import scrape.py,
+which will run a webscrape and save all the words in a text file that can then be accessed here.
+
+In this code, a random index is come up with (on the list of all words derived from the word text file)
+using randint, and the hangman game will then be implemented.
+One clue will be given when you are at 6 and 3 lives respectively. However, if the clue given has already
+been found, the clue will be voided.
+Thank you.
+
+Any possible queries please feel free to raise issues of Github!!!
+"""
+
+
+
+
+
+
 print(message)
 if not os.path.isfile(directory.joinpath("words.txt")):
     scrape.scrape()
