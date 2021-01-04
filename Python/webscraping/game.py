@@ -32,7 +32,56 @@ Thank you.
 Any possible queries please feel free to raise issues of Github!!!
 """
 
-
+HANGMANPICS = ['''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''']
 
 
 
@@ -51,7 +100,7 @@ index = random.randint(0,len(words)-1)
 topic = words[index][0]
 word = words[index][1][:-1]
 word_length = len(word)
-lives = 9
+lives = 7
 # print(index)
 # print(words[index])
 agree = True
@@ -86,7 +135,8 @@ while not found:
         print("The word is: "+word)
         break
     print(output)
-    print(f"Your have {lives} lives left.")
+    print("Lives \n")
+    print(HANGMANPICS[lives])
     choice = str(input("Please type in a new character: "))
     print("Now you know at least 1 letter. Keep trying")
     if choice not in word:
