@@ -19,6 +19,7 @@ Also, avoid moving the files game.py and scrape.py to seperate directories. Than
 
 
 """
+Hallo pokepoke person!!! 
 How does this thing work???
 If you did not play this before/did not download the words together, it will import scrape.py,
 which will run a webscrape and save all the words in a text file that can then be accessed here.
