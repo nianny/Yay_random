@@ -135,7 +135,7 @@ while not found:
         print("The word is: "+word)
         break
     print(output)
-    print("Lives: " + HANGMANPICS[7-lives])
+    print("Lives: " + str(lives)+HANGMANPICS[7-lives])
 
     choice = str(input("Please type in a new character: "))
     print("Now you know at least 1 letter. Keep trying")
