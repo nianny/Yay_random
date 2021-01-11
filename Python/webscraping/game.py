@@ -3,6 +3,7 @@ import random
 import os.path
 import scrape
 from pathlib import Path
+from time import sleep
 directory = Path(__file__).parent.absolute()
 
 
@@ -11,6 +12,8 @@ Hallo and welcome to the first game created ever by me.
 This is a hangman game created in the form of a webscrape!!!
 The words are derived from enchantedlearning.com/wordlist/ 
 and good luck for the game :)
+
+If any errors were raised by the code, please install libraries if necessary. Thank you.
 
 Please raise any possible issues on github
 Also, avoid moving the files game.py and scrape.py to seperate directories. Thank you!!!
@@ -88,6 +91,7 @@ HANGMANPICS = ['''
 
 
 print(message)
+sleep(7)
 if not os.path.isfile(directory.joinpath("words.txt")):
     scrape.scrape()
 words = []
@@ -144,6 +148,7 @@ while not found:
         lives -= 1
         if (lives<=0):
             print("Awwww. All your lives were lost. Please play again later")
+            print("The word was: "+word)
             break
         if (lives == 6):
             clue = random.randint(0, word_length-1)
